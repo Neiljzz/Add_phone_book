@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Log In{% endblock %}
+
+{% block header %}
+    <h1>Log In - As Phone User </h1>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            <div class="card mt-3">
+                <div class="card-body">
+                    <form action="" method="post">
+                        {{ form.csrf_token }}
+
+                        {{ form.phone_number.label }}
+                        {{ form.phone_number(class='form-control', placeholder='Enter Phone Number') }}
+
+                        {{ form.password.label }}
+                        {{ form.password(class='form-control', placeholder='Enter Password') }}
+
+                        {{ form.submit(class='btn btn-primary w-100 mt-3')}}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

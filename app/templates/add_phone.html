@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign up{% endblock %}
+
+{% block header %}
+    <h1 class="text-center">Sign up -- Add phone number user </h1>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            <div class="card my-3">
+                <div class="card-body">
+                    <form action="" method="post">
+                        {{ form.csrf_token }}
+
+                        {{ form.first_name.label }}*
+                        {{ form.first_name(class='form-control', placeholder="Enter Contact's First Name") }}
+
+                        {{ form.last_name.label }}*
+                        {{ form.last_name(class='form-control', placeholder="Enter Contact's Last Name") }}
+                        
+                        {{ form.phone_number.label }}*
+                        {{ form.phone_number(class='form-control', placeholder="Enter Contact's Phone Number") }}
+
+                        {{ form.password.label }}
+                        {{ form.password(class="form-control", placeholder="Enter Password") }}
+
+                        {{ form.confirm_pass.label }}
+                        {{ form.confirm_pass(class="form-control", placeholder="Confirm Your Password") }}
+
+                        {{ form.submit(class='btn btn-warning w-100 mt-3') }}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

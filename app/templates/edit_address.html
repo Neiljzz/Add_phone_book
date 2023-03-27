@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit A Address{% endblock %}
+
+{% block header %}
+    <h1>Edit {{ address }}</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            <div class="card mt-3">
+                <div class="card-body">
+                    <form action="" method="post">
+                        {{ form.csrf_token }}
+
+                        {{ form.street_name.label }}
+                        {{ form.street_name(class="form-control", placeholder="Enter Street Name") }}
+
+                        {{ form.number.label }}
+                        {{ form.number(class="form-control", placeholder="Enter Number") }}
+
+                        {{ form.unit.label }}
+                        {{ form.unit(class="form-control", placeholder="Enter Unit") }}
+
+                        {{ form.postal_code.label }}
+                        {{ form.postal_code(class="form-control", placeholder="Enter Postal Code") }}
+
+                        {{ form.city.label }}
+                        {{ form.city(class="form-control", placeholder="Enter City") }}
+
+                        {{ form.state.label }}
+                        {{ form.state(class="form-control", placeholder="Enter State") }}
+                        
+                        {{ form.submit(class="btn btn-primary w-100 mt-3", value="Edit Address") }}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
